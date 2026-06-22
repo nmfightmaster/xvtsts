@@ -10,7 +10,7 @@ var remaining_capacity: int:
 	get:
 		return levels.reduce(func(acc, n): return acc - n,capacity) 
 
-func _ready() -> void:
+func _init() -> void:
 	levels.resize(Card.Pool.values().size())
 
 func configure_levels(target: Card.Pool, delta: int) -> void:
