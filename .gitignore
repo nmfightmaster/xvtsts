@@ -3,3 +3,5 @@
 /android/
 /godot-docs
 CLAUDE.md
+.vscode/
+.claude/
