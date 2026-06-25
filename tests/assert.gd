@@ -23,3 +23,4 @@ func is_eq(actual: Variant, expected: Variant, description: String) -> void:
 
 func summarize() -> void:
 	print_rich("Total passed: [color=green]%s[/color] \nTotal failed: [color=red]%s[/color]" % [passes, failures])
+	print("-".repeat(60))
