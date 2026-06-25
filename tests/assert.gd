@@ -6,21 +6,22 @@ var failures: int = 0
 
 func is_true(condition: bool, description: String) -> void:
 	if (condition):
-		print_rich("%s -- [color=green]PASS[/color]" % description)
+		print_rich("- %s -- [color=green]PASS[/color]" % description)
 		passes += 1
 	else:
-		print_rich("%s -- [color=red]FAIL[/color]" % description)
+		print_rich("- %s -- [color=red]FAIL[/color]" % description)
 		failures += 1
 	
 
 func is_eq(actual: Variant, expected: Variant, description: String) -> void:
 	if (actual == expected):
-		print_rich("%s -- [color=green]PASS[/color]" % description)
+		print_rich("- %s -- [color=green]PASS[/color]" % description)
 		passes += 1
 	else:
-		print_rich("%s -- [color=red]FAIL[/color] -- expected: %s, got: %s" % [description, expected, actual])
+		print_rich("- %s -- [color=red]FAIL[/color] -- expected: %s, got: %s" % [description, expected, actual])
 		failures += 1
 
 func summarize() -> void:
+	print()
 	print_rich("Total passed: [color=green]%s[/color] \nTotal failed: [color=red]%s[/color]" % [passes, failures])
-	print("-".repeat(60))
+	print("-".repeat(100))
