@@ -11,8 +11,8 @@ func _init(t: Type, d: int = 0) -> void:
 	type = t
 	distance = d
 
-static func move(d: int) -> MovementAction:
+static func create_move(d: int = 1) -> MovementAction:
 	return MovementAction.new(Type.MOVE, d)
 
-static func turn() -> MovementAction:
+static func create_turn() -> MovementAction:
 	return MovementAction.new(Type.TURN)
