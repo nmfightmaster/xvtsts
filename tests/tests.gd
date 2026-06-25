@@ -6,6 +6,8 @@ func _init() -> void:
 	TestCapacitor.new().run()
 	print_rich("[b][u]Testing Ship:[/b][/u]\n")
 	TestShip.new().run()
+	print_rich("[b][u]Testing MovementAction:[/b][/u]\n")
+	TestMovementAction.new().run()
 	quit()
 
 # for sanity: print_rich("[b][u]Testing [/b][/u]\n")
