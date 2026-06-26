@@ -12,46 +12,46 @@ static func run() -> void:
 	Assert.summarize()
 
 static func test_move_pos() -> void:
-	var s = Ship.new(1)
+	var s: Ship = Ship.new(1)
 	s.move(1)
 	Assert.is_eq(s.position, 1, "Facing/moving positively changes position positively.")
 
 static func test_move_neg() -> void:
-	var s = Ship.new(1, 0, -1)
+	var s: Ship = Ship.new(1, 0, -1)
 	s.move(1)
 	Assert.is_eq(s.position, -1, "Facing/moving negatively changes position negatively.")
 
 static func test_turn() -> void:
-	var s = Ship.new(1)
-	var start_facing = s.facing
+	var s: Ship = Ship.new(1)
+	var start_facing: int = s.facing
 	s.turn()
 	Assert.is_true(start_facing == s.facing * -1, "Turning inverts facing")
 
 static func test_take_damage() -> void:
-	var hp = 2
-	var dmg = 1
-	var s = Ship.new(hp)
+	var hp: int = 2
+	var dmg: int = 1
+	var s: Ship = Ship.new(hp)
 	s.take_damage(dmg)
 	Assert.is_eq(s.health, hp - dmg, "Taking damage reduces health")
 
 static func test_take_lethal_damage() -> void:
-	var hp = 1
-	var dmg = 1
-	var s = Ship.new(hp)
+	var hp: int = 1
+	var dmg: int = 1
+	var s: Ship = Ship.new(hp)
 	s.take_damage(dmg)
 	Assert.is_eq(s.health, 0, "Taking lethal damage sets health to 0")
 
 static func test_can_hit_frontal_enemy() -> void:
-	var player = Ship.new(1, 0)
-	var enemy = Ship.new(1, 1)
+	var player: Ship = Ship.new(1, 0)
+	var enemy: Ship = Ship.new(1, 1)
 	Assert.is_true(player.can_hit(enemy), "Can hit frontal enemy")
 
 static func test_cannot_hit_rear_enemy() -> void:
-	var player = Ship.new(1, 0, -1)
-	var enemy = Ship.new(1, 1)
+	var player: Ship = Ship.new(1, 0, -1)
+	var enemy: Ship = Ship.new(1, 1)
 	Assert.is_true(!player.can_hit(enemy), "Cannot hit rear enemy")
 
 static func test_cannot_hit_same_position_enemy() -> void:
-	var player = Ship.new(1, 1)
-	var enemy = Ship.new(1, 1)
+	var player: Ship = Ship.new(1, 1)
+	var enemy: Ship = Ship.new(1, 1)
 	Assert.is_true(!player.can_hit(enemy), "Cannot hit same-position enemy")
