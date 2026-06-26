@@ -28,5 +28,6 @@ func is_playable(card: Card) -> bool:
 	)
 
 func drain(card: Card) -> void:
+	assert(is_playable(card), "Unplayable card.")
 	for system in Card.Pool.values():
 		levels[system] -= card.cost[system]
