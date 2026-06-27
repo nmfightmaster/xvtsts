@@ -18,7 +18,7 @@ func configure_levels(target: Card.Pool, delta: int) -> void:
 		levels[target] += delta
 
 func toggle_lock() -> void:
-	locked = !locked
+	locked = not locked
 
 func is_playable(card: Card) -> bool:
 	return (
