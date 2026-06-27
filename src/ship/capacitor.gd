@@ -1,5 +1,5 @@
 class_name Capacitor
-extends Node
+extends RefCounted
 
 var levels: Array[int]
 
