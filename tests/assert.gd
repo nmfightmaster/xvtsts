@@ -35,13 +35,13 @@ static func summarize_single(label: String) -> void:
 static func summarize_whole() -> void:
 	print_rich("[b][color=purple]TEST SUMMARY:[/b][/color]\n")
 	print_rich("Total passed: [color=green]%s[/color] \nTotal failed: [color=red]%s[/color]" % [whole_passes, whole_failures])
-	print("-".repeat(100))
 	var failed_tests: String = "|"
 	for test in results:
 		if test["failures"] > 0:
 			failed_tests += " %s |" % test["label"]
 	if failed_tests != "|":
-		print("Failed tests: %s" % failed_tests)
+		print_rich("Failed tests: [color=red]%s[/color]" % failed_tests)
+	print("-".repeat(100))
 	whole_passes = 0
 	whole_failures = 0
 	results = []
