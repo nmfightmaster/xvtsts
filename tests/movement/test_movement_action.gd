@@ -4,7 +4,7 @@ static func run() -> void:
 	test_default_move()
 	test_move()
 	test_turn()
-	Assert.summarize()
+	Assert.summarize_single("MovementAction")
 
 static func test_default_move() -> void:
 	var m: MovementAction = MovementAction.create_move()

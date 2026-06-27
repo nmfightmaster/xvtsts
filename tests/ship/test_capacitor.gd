@@ -6,7 +6,7 @@ static func run() -> void:
 	test_valid_playable_card()
 	test_invalid_playable_card()
 	test_drain_card()
-	Assert.summarize()
+	Assert.summarize_single("Capacitor")
 
 static func test_configure_valid_level() -> void:
 	var c: Capacitor = Capacitor.new()

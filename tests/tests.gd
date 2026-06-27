@@ -8,6 +8,7 @@ func _init() -> void:
 	TestShip.run()
 	print_rich("[b][u]Testing MovementAction:[/b][/u]\n")
 	TestMovementAction.run()
+	Assert.summarize_whole()
 	quit()
 
 # for sanity: print_rich("[b][u]Testing [/b][/u]\n")

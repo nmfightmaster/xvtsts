@@ -9,7 +9,7 @@ static func run() -> void:
 	test_can_hit_frontal_enemy()
 	test_cannot_hit_rear_enemy()
 	test_cannot_hit_same_position_enemy()
-	Assert.summarize()
+	Assert.summarize_single("Ship")
 
 static func test_move_pos() -> void:
 	var s: Ship = Ship.new(1)
@@ -49,9 +49,9 @@ static func test_can_hit_frontal_enemy() -> void:
 static func test_cannot_hit_rear_enemy() -> void:
 	var player: Ship = Ship.new(1, 0, -1)
 	var enemy: Ship = Ship.new(1, 1)
-	Assert.is_true(!player.can_hit(enemy), "Cannot hit rear enemy")
+	Assert.is_true(not player.can_hit(enemy), "Cannot hit rear enemy")
 
 static func test_cannot_hit_same_position_enemy() -> void:
 	var player: Ship = Ship.new(1, 1)
 	var enemy: Ship = Ship.new(1, 1)
-	Assert.is_true(!player.can_hit(enemy), "Cannot hit same-position enemy")
+	Assert.is_true(not player.can_hit(enemy), "Cannot hit same-position enemy")
