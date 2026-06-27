@@ -12,6 +12,7 @@ func clear(ship: Ship) -> void:
 	movement_turn[ship].clear()
 
 func get_actions(ship: Ship) -> Array[MovementAction]:
+	assert(movement_turn.has(ship), "Invalid ship.")
 	var typed: Array[MovementAction] = []
 	typed.assign(movement_turn[ship])
 	return typed

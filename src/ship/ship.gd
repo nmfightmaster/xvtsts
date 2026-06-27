@@ -23,6 +23,7 @@ func can_hit(target: Ship) -> bool:
 	return (target.position - position) * facing > 0
 
 func _init(h: int, p: int = 0, f: Facing = Facing.POS) -> void:
+	assert (health > 0, "Starting health must be positive.")
 	health = h
 	position = p
 	facing = f
