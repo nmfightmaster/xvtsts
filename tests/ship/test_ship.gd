@@ -17,7 +17,7 @@ static func test_move_pos() -> void:
 	Assert.is_eq(s.position, 1, "Facing/moving positively changes position positively.")
 
 static func test_move_neg() -> void:
-	var s: Ship = Ship.new(1, 0, -1)
+	var s: Ship = Ship.new(1, 0, Ship.Facing.NEG)
 	s.move(1)
 	Assert.is_eq(s.position, -1, "Facing/moving negatively changes position negatively.")
 
@@ -47,7 +47,7 @@ static func test_can_hit_frontal_enemy() -> void:
 	Assert.is_true(player.can_hit(enemy), "Can hit frontal enemy")
 
 static func test_cannot_hit_rear_enemy() -> void:
-	var player: Ship = Ship.new(1, 0, -1)
+	var player: Ship = Ship.new(1, 0, Ship.Facing.NEG)
 	var enemy: Ship = Ship.new(1, 1)
 	Assert.is_true(not player.can_hit(enemy), "Cannot hit rear enemy")
 
