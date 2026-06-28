@@ -3,14 +3,17 @@ extends RefCounted
 
 var levels: Array[int]
 
-var locked: bool = false
-var capacity: int = 0
+var capacity: int
+var locked: bool
+
 
 var remaining_capacity: int:
 	get:
 		return levels.reduce(func(acc, n): return acc - n,capacity) 
 
-func _init() -> void:
+func _init(c: int = 0, l: bool = false) -> void:
+	capacity = c
+	locked = l
 	levels.resize(Card.Pool.values().size())
 
 func configure_levels(target: Card.Pool, delta: int) -> void:
