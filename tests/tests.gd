@@ -12,7 +12,7 @@ func _init() -> void:
 	TestMovementTurn.run()
 	print_rich("[b][u]Testing CombinedMovementFrame[/b][/u]\n")
 	TestCombinedMovementFrame.run()
-	Assert.summarize_whole()
+	Assert.summarize_all()
 	quit()
 
 # for sanity: print_rich("[b][u]Testing [/b][/u]\n")
