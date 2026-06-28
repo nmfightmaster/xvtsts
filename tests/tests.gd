@@ -12,6 +12,8 @@ func _init() -> void:
 	TestMovementTurn.run()
 	print_rich("[b][u]Testing CombinedMovementFrame[/b][/u]\n")
 	TestCombinedMovementFrame.run()
+	print_rich("[b][u]Testing MovementController[/b][/u]\n")
+	TestMovementController.run()
 	Assert.summarize_all()
 	quit()
 
