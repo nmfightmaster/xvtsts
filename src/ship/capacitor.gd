@@ -11,11 +11,6 @@ var remaining_capacity: int:
 	get:
 		return levels.reduce(func(acc, n): return acc - n,capacity) 
 
-func _init(c: int = 0, l: bool = false) -> void:
-	capacity = c
-	locked = l
-	levels.resize(Card.Pool.values().size())
-
 func configure_levels(target: Card.Pool, delta: int) -> void:
 	if (remaining_capacity >= delta and not locked and (levels[target] + delta >= 0)):
 		levels[target] += delta
@@ -34,3 +29,8 @@ func drain(card: Card) -> void:
 	assert(is_playable(card), "Unplayable card.")
 	for system in Card.Pool.values():
 		levels[system] -= card.cost[system]
+
+func _init(c: int = 0, l: bool = false) -> void:
+	capacity = c
+	locked = l
+	levels.resize(Card.Pool.values().size())
